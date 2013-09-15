@@ -1,8 +1,8 @@
-package Mojolicious::Plugin::LinkEmbedder::Youtube;
+package Mojolicious::Plugin::LinkEmbedder::Link::Video::Youtube;
 
 =head1 NAME
 
-Mojolicious::Plugin::LinkEmbedder::Youtube - YouTube URL
+Mojolicious::Plugin::LinkEmbedder::Link::Video::Youtube - YouTube URL
 
 =head1 DESCRIPTION
 
@@ -12,7 +12,7 @@ This class inherit from L<Mojolicious::Plugin::LinkEmbedder::Base>.
 
 =cut
 
-use Mojo::Base 'Mojolicious::Plugin::LinkEmbedder::Base';
+use Mojo::Base 'Mojolicious::Plugin::LinkEmbedder::Link::Video';
 
 =head1 ATTRIBUTES
 
