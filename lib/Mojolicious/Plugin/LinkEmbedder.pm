@@ -120,6 +120,7 @@ sub embed_link {
     return $self->_new_link_object(image => $c, { url => $url, _tx => $tx }, $cb) if $ct =~ m!^image/!;
     return $self->_new_link_object(video => $c, { url => $url, _tx => $tx }, $cb) if $ct =~ m!^video/!;
     return $self->_new_link_object(text => $c, { url => $url, _tx => $tx }, $cb) if $ct =~ m!^text/plain!;
+    return $self->_new_link_object(html => $c, { url => $url }, $cb) if $ct =~ m!^text/html!;
     return $c->$cb(Mojolicious::Plugin::LinkEmbedder::Link->new(url => $url));
   });
 
@@ -173,6 +174,7 @@ sub register {
     'blip' => 'Mojolicious::Plugin::LinkEmbedder::Link::Video::Blip',
     'collegehumor' => 'Mojolicious::Plugin::LinkEmbedder::Link::Video::Collegehumor',
     'gist.github' => 'Mojolicious::Plugin::LinkEmbedder::Link::Text::GistGithub',
+    'html' => 'Mojolicious::Plugin::LinkEmbedder::Link::FromMetaTag',
     'image' => 'Mojolicious::Plugin::LinkEmbedder::Link::Image',
     'imgur' => 'Mojolicious::Plugin::LinkEmbedder::Link::Image::Imgur',
     'ted' => 'Mojolicious::Plugin::LinkEmbedder::Link::Video::Ted',
